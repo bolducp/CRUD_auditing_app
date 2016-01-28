@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var Item = require('../models/items')
+var numeral = require('numeral');
 
 /* GET items listing. */
 router.get('/', function(req, res, next) {
@@ -12,7 +13,7 @@ router.get('/', function(req, res, next) {
     if (err) {
       return res.status(400).send(err);
     }
-    res.render("listItems", {items: items, total: total});
+    res.render("listItems", {items: items, total: numeral(total).format('$0,0.00')});
   });
 });
 

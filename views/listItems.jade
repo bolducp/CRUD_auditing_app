@@ -12,17 +12,18 @@ block content
             th More Information/Edit
       tbody
         each item in items
+          - var price = "$" + item.price.toFixed(2)
           tr
             td #{item.name}
             td   
               img.icon(src=item.photo)
-            td $#{item.price}
+            td=price
             td 
               a(href='/items/details/' +  '#{item.id}') Get details
               | : Click for more contact details for #{item.name} 
   div
     br
-    h3 Total value of items: $#{total}
+    h3 Total value of items: #{total}
   div
     br
     h2
