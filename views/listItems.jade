@@ -7,15 +7,18 @@ block content
     table.table.table-hover
       thead
         tr: th Item name
+            th Photo
             th Value
             th More Information/Edit
       tbody
         each item in items
           tr
             td #{item.name}
+            td   
+              img.icon(src=item.photo)
             td $#{item.price}
             td 
-              a(href='/contacts/details/' +  '#{item.id}') Get details
+              a(href='/items/details/' +  '#{item.id}') Get details
               | : Click for more contact details for #{item.name} 
   div
     br

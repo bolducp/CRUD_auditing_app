@@ -33,12 +33,36 @@ td {
   text-align: left;
 }
 
+p {
+  text-align: left;
+  font-size: 20px;
+}
 #addContact {
   color: Thistle;
   font-family: 'Volkhov', serif;
   font-size: 26px;
 }
 
+#editItem {
+  height: 150px;
+  width: 600px;
+  border-radius: 4px;
+}
+
+#itemID {
+  display:none;
+}
+
 .row {
   padding-bottom: 10px;
+}
+
+.icon {
+  height: 45px;
+  width: auto;
+}
+
+.fullImg {
+  height: 100px;
+  width: auto;
 }

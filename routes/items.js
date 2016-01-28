@@ -21,6 +21,16 @@ router.get('/addItem', function(req, res, next) {
     res.render('addItem');
   });
 
+/* GET details for a specific item */
+router.get('/details/:itemID', function(req, res){
+  Item.findById(req.params.itemID, function(err, item){
+      if (err){
+        return res.status(400).send(err);
+      }
+      res.render("showDetails", {item: item});
+  });
+});
+
 
 /* POST item to create listing */
 router.post('/', function(req, res){
@@ -49,9 +59,13 @@ router.delete('/:itemID', function(req, res){
 
 
 /* PUT request to UPDATE item listing */
-router.put('/:itemID/:propertyToChange/:newValue', function(req, res){
+router.put('/:itemID/', function(req, res){
   Item.findById(req.params.itemID, function(err, item){
-    item[req.params.propertyToChange] = req.params.newValue;
+    item.name = req.body.name;
+    item.price = req.body.price;
+    item.description = req.body.description;
+    item.photo = req.body.photo;
+
     item.save(function(err, updatedItem){
       if (err){
         return res.status(400).send(err);
@@ -60,6 +74,7 @@ router.put('/:itemID/:propertyToChange/:newValue', function(req, res){
     });
   });
 });
+
 
 
 module.exports = router;

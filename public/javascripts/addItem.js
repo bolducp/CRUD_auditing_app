@@ -3,10 +3,10 @@
 $(document).ready(init);
 
 function init(){
-  $("#submit").on("click", addContact);
+  $("#submit").on("click", addItem);
 }
 
-function addContact(e){ 
+function addItem(e){
   e.preventDefault();
   var itemName = $('#name').val();
   var value = $('#price').val();

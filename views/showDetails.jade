@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  div
+    h1 #{item.name}
+    br
+    img.fullImg(src=item.photo)
+    p Value: $#{item.price}
+    p Description: #{item.description}
+    button#delete.btn.btn-danger(type='button') Delete Item
+
+  br
+  div#returnToList
+    h4
+      a(href="/items") Return to items list
+  
+  br
+  br
+  div#editItem
+      h3 Edit item information
+      p#itemID #{item.id}
+      .input-group
+        span.input-group-addon Name:
+        input#name.form-control(type='text', value=item.name, required)
+      .input-group
+        span.input-group-addon Value:
+        input#price.form-control(type='number', min='0.00', step='0.01', value=item.price, required)
+      .input-group
+        span.input-group-addon Description:
+        textarea#description.form-control(type='text', rows='5', cols='80' value=item.description)
+      .input-group
+        span.input-group-addon Photo Url:
+        input#photo.form-control(type='text', value=item.photo)
+      br
+      button#makeEdits.btn.btn-info(type='button') Make Edits
+          
+block scripts
+  script(src="/javascripts/showDetails.js")
