@@ -4,7 +4,7 @@ block content
   h1 Archived Items
   br
   div
-    input#search.form-control(type='text', placeholder='Search for item name')
+    input#search.form-control(type='text', placeholder='Search')
     br
     table.table.table-hover
       thead
@@ -19,13 +19,13 @@ block content
             td.searchable #{item.name}
             td.searchable   
               img.icon(src=item.photo)
-            td.searchable=price
+            td.searchable.price=price
             td 
               a(href='/items/details/' +  '#{item.id}') Get details
               | : Click for more details and to edit or delete
   div
     br
-    h3 Total value of items: #{total}
+    h3#total Total value of items: #{total}
   div
     br
     h2
