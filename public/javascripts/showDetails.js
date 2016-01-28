@@ -7,7 +7,6 @@ function init(){
   $('#delete').click(deleteItem);
 }
 
-
 function editItem(event){
   event.preventDefault();
   var itemName = $('#name').val();
@@ -38,5 +37,4 @@ function deleteItem(event){
     .success(function(data){
       window.location = "/items";
   });
-
 }

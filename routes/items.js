@@ -32,7 +32,6 @@ router.get('/details/:itemID', function(req, res){
   });
 });
 
-
 /* POST item to create listing */
 router.post('/', function(req, res){
   var item = new Item(req.body);
@@ -45,7 +44,6 @@ router.post('/', function(req, res){
   });
 });
 
-
 /* DELETE item to delete listing */
 router.delete('/:itemID', function(req, res){
   Item.findById(req.params.itemID, function(err, item){
@@ -57,7 +55,6 @@ router.delete('/:itemID', function(req, res){
     });
   });
 });
-
 
 /* PUT request to UPDATE item listing */
 router.put('/:itemID/', function(req, res){
@@ -75,7 +72,5 @@ router.put('/:itemID/', function(req, res){
     });
   });
 });
-
-
 
 module.exports = router;

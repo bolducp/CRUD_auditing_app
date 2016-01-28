@@ -3,11 +3,11 @@ extends layout
 block content
   div.container
     h1= title
-    p Welcome to Paige's #{title}
-    
-    h3 
-      a(href="/items") See archived items 
-    
-    h3 
-      a(href="/items/addItem") Add a new item
-     
+    p.homepage Welcome to Paige's #{title}
+    div
+      br
+      h2.homepage
+        a(href="/items") See archived items 
+      h2.homepage
+        a(href="/items/addItem") Add a new item
+       

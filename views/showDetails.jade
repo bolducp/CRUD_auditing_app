@@ -8,12 +8,10 @@ block content
     p Value: $#{item.price}
     p Description: #{item.description}
     button#delete.btn.btn-danger(type='button') Delete Item
-
   br
   div#returnToList
     h4
       a(href="/items") Return to items list
-  
   br
   br
   div#editItem
@@ -33,6 +31,5 @@ block content
         input#photo.form-control(type='text', value=item.photo)
       br
       button#makeEdits.btn.btn-info(type='button') Make Edits
-          
 block scripts
   script(src="/javascripts/showDetails.js")

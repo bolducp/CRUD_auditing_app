@@ -1,12 +1,11 @@
 body {
   padding: 50px;
-  font-family: 'Cardo', serif;
+  font-family: 'Josefin Slab', serif;
   background-color: snow;
   text-align: center;
 }
 
 h1 {
-  font-family: 'Volkhov', serif;
   font-size: 50px;
 }
 
@@ -51,6 +50,10 @@ p {
 
 #itemID {
   display:none;
+}
+
+.homepage {
+  text-align: center;
 }
 
 .row {
