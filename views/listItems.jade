@@ -4,6 +4,8 @@ block content
   h1 Archived Items
   br
   div
+    input#search.form-control(type='text', placeholder='Search for item name')
+    br
     table.table.table-hover
       thead
         tr: th Item name
@@ -13,14 +15,14 @@ block content
       tbody
         each item in items
           - var price = "$" + item.price.toFixed(2)
-          tr
-            td #{item.name}
-            td   
+          tr.rows
+            td.searchable #{item.name}
+            td.searchable   
               img.icon(src=item.photo)
-            td=price
+            td.searchable=price
             td 
               a(href='/items/details/' +  '#{item.id}') Get details
-              | : Click for more details and to edit or delete #{item.name} 
+              | : Click for more details and to edit or delete
   div
     br
     h3 Total value of items: #{total}
@@ -28,3 +30,6 @@ block content
     br
     h2
       a#addItem(href="/items/addItem") Add a new item 
+      
+block scripts
+  script(src="/javascripts/listItems.js")
