@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1 Archived Items
+  br
+  div
+    table.table.table-hover
+      thead
+        tr: th Item name
+            th Value
+            th More Information/Edit
+      tbody
+        each item in items
+          tr
+            td #{item.name}
+            td $#{item.price}
+            td 
+              a(href='/contacts/details/' +  '#{item.id}') Get details
+              | : Click for more contact details for #{item.name} 
+  div
+    br
+    h3 Total value of items: $#{total}
+  div
+    br
+    h2
+      a#addItem(href="/items/addItem") Add a new item 

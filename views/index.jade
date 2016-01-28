@@ -1,5 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.container
+    h1= title
+    p Welcome to Paige's #{title}
+    
+    h3 
+      a(href="/items") See archived items 
+    
+    h3 
+      a(href="/items/addItem") Add a new item
+     

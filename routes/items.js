@@ -6,12 +6,20 @@ var Item = require('../models/items')
 /* GET items listing. */
 router.get('/', function(req, res, next) {
   Item.find({}, function(err, items){
+    var total = items.reduce(function(prev, current){
+      return prev + current.price;
+    }, 0)
     if (err) {
       return res.status(400).send(err);
     }
-    res.send(items)
+    res.render("listItems", {items: items, total: total});
   });
 });
+
+/* GET form for adding an item */
+router.get('/addItem', function(req, res, next) {
+    res.render('addItem');
+  });
 
 
 /* POST item to create listing */
@@ -52,13 +60,6 @@ router.put('/:itemID/:propertyToChange/:newValue', function(req, res){
     });
   });
 });
-
-
-
-
-
-
-
 
 
 module.exports = router;

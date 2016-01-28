@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  div.row
+    h1 Archive a new item:
+  div
+  #itemInput.row
+   form#newItem.form-group
+     div.row
+       div.col-xs-6
+         label Item name:  
+         input.form-control#name(type='text', size='55', required)
+        div.col-xs-6
+         label Value: 
+         input.form-control#price(type='number', size='55', min='0.00', step='0.01', required)
+     div.row
+       div.col-xs-6
+         label Description: 
+         input.form-control#description(type='text', size='55', required)
+        div.col-xs-6
+         label Photo Url: 
+         input.form-control#photo_url(type='textarea', rows='10')
+     br
+     input#submit.btn.btn-info(type='submit', value='Submit')
+     br
+     br
+     br
+     h3 
+       a(href="/items") Go back to item list
+
+block scripts
+  script(src="/javascripts/addItem.js")

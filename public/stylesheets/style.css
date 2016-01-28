@@ -1,8 +1,44 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Cardo', serif;
+  background-color: snow;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Volkhov', serif;
+  font-size: 50px;
+}
+
+h3 {
+  text-align: left;
+  margin-left: 10%;
 }
 
 a {
   color: #00B7FF;
+}
+
+th {
+  font-size: 32px;
+}
+
+table {
+  font-size: 22px;
+  margin-left: 10%;
+  padding-right: 15%;
+}
+
+td {
+  text-align: left;
+}
+
+#addContact {
+  color: Thistle;
+  font-family: 'Volkhov', serif;
+  font-size: 26px;
+}
+
+.row {
+  padding-bottom: 10px;
 }
