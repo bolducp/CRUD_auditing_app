@@ -5,8 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
+console.log("process env", process.env)
+
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/auditingapp');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/auditingapp');
 
 var app = express();
 
