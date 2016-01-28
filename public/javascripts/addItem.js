@@ -17,5 +17,6 @@ function addItem(e){
   $.post('/items/', newItem)
     .success(function(data){
       window.location = "/items";
+      console.log("newItem ", newItem);
   });
 }
